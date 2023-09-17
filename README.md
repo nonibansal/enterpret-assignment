@@ -20,7 +20,8 @@ curl --location 'http://localhost:8081/v1/pipeline/' \
     "name": "sentiment",
     "tenant": "curefit",
     "version": 1,
-    "is_active": true
+    "is_active": true,
+    "url": "http://localhost:8080/v1/0"
 }'
 ```
 

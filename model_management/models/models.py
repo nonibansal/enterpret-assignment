@@ -9,6 +9,7 @@ class PipelineRequest(BaseModel):
     version: int
     tenant: Tenant
     is_active: bool = True
+    url: str
 
 
 class Pipeline(PipelineRequest):

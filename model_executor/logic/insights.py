@@ -37,6 +37,7 @@ class InsightsService:
 
             prediction = self.model_hoster_service.get_prediction(
                 pipeline_id=pipeline_id,
+                url=pipeline.url,
                 record=get_insights_request.record
             )
 

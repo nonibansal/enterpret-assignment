@@ -15,21 +15,23 @@ class ModelHosterService:
         self.settings = get_settings()
         self.logger = logging.getLogger(__name__)
 
-    def get_prediction(self, pipeline_id: int, record: Record) -> ModelResponse:
+    def get_prediction(self, pipeline_id: int, url: str, record: Record) -> ModelResponse:
         """
         Get model output
 
         :param pipeline_id:
+        :param url:
         :param record:
         :return:
         """
+        self.logger.info(f"Getting prediction against pipeline id: {pipeline_id} wit url: {url}")
         model_request = ModelRequest(
             input=record
         )
 
         response = requests.request(
             method="POST",
-            url=f"http://{self.settings.MODEL_HOSTER_URL}/v1/{pipeline_id}",
+            url=url,
             json=model_request.model_dump()
         )
 
