@@ -27,7 +27,7 @@ class InsightsController:
 
     async def get_insights(
             self, get_insights_request: GetInsightsRequest,
-            tenant: Annotated[Tenant, Header()] = "default",
+            tenant: Annotated[Tenant, Header()] = "common",
     ):
         try:
             return self.insights_service.get_insights(

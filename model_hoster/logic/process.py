@@ -24,8 +24,7 @@ class Model1:
         """
         model_path = os.path.join(
             self.settings.MODEL_PATH,
-            self.settings.PIPELINE_NAME,
-            self.settings.PIPELINE_VERSION,
+            self.settings.PIPELINE_ID,
             "model1"
         )
         return object
@@ -46,7 +45,6 @@ class Model1:
             pass
             # To model something
         except Exception as e:
-            self.logger.error(f"Error : {e}")
             raise Exception(e)
         finally:
             self.model_pool.release(model)
@@ -70,11 +68,11 @@ class TextPipeline:
         # self.model_2 = TextProcessor2()
 
     def process(self, text: str) -> ModelResponse:
-        logging.info(f"Starting text processing with pipeline: {self.settings.PIPELINE_NAME}")
+        logging.info(f"Starting text processing with pipeline: {self.settings.PIPELINE_ID}")
 
         output = ModelResponse(
             output=self.model_1.process_text(text)
         )
 
-        logging.info(f"Finished pipeline: {self.settings.PIPELINE_NAME} with response: {output}")
+        logging.info(f"Finished pipeline: {self.settings.PIPELINE_ID} with response: {output}")
         return output

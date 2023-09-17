@@ -50,6 +50,8 @@ class Settings(BaseSettings):
 
     FASTAPI_SERVICE_NAME: str
     FASTAPI_PORT_MODEL_EXECUTOR: str
+    # FASTAPI_PORT_MODEL_MANAGEMENT: str
+    # FASTAPI_PORT_MODEL_HOSTER: str
     FASTAPI_HOST: str
 
     PROMETHEUS_PORT: str

@@ -30,6 +30,7 @@ class PredictionController:
         try:
             return pipeline.process(request.input.text)
         except Exception as e:
+            logging.error(f"{e}")
             return Response(status_code=500, content=f"{e}")
         finally:
             self.predictors.release(pipeline)

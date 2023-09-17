@@ -2,9 +2,9 @@
 
 ### How to Run
 
-``shell
+```shell
 make install
 make model_hoster-run
 make model_management-run
 make model_executor-run
-``
+```

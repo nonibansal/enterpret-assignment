@@ -15,4 +15,4 @@ class GetInsightsRequest(BaseModel):
 
 class GetInsightsResponse(BaseModel):
     record: Record
-    pipeline_response_list = List[PipelineResponse]
+    pipeline_response_list: List[PipelineResponse]

@@ -34,7 +34,7 @@ def execute():
 
     _create_prometheus_dir()
 
-    address = f"{settings.FASTAPI_HOST}:{settings.FASTAPI_PORT_MODEL_MANAGEMENT}"
+    address = f"{settings.FASTAPI_HOST}:{settings.FASTAPI_PORT_MODEL_EXECUTOR}"
 
     if settings.ENVIRONMENT == "local":
         workers = 1

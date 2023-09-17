@@ -21,10 +21,13 @@ class TenantPipelinesService:
         :param tenant: Tenant
         :return:
         """
+        self.logger.info(f"Getting pipelines for tenant: {tenant}")
         response = requests.request(
             method="GET",
-            url=f"http://{self.settings.MODEL_MANAGEMENT_URL}/v1/tenant_pipelines/?tenant={tenant}"
+            url=f"http://{self.settings.MODEL_MANAGEMENT_URL}/v1/tenant-pipelines/?tenant={tenant.value}"
         )
+
+        self.logger.info(f"Got response: {response.json()}")
 
         value = TenantPipelines(**response.json())
         return value
